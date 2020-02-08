@@ -10,8 +10,6 @@ class User < ActiveRecord::Base
 
   has_many :achievements_list, foreign_key: :achievement_id, class_name: 'AchievementAssignation'
   has_many :achievements, through: :achievements_list
+  belongs_to :level, class_name: 'Level', foreign_key: 'levels_id'
 
-
-  has_many :levels_id, foreign_key: :levels_id, class_name: 'Level'
-  has_many :level, through: :levels_id
 end
