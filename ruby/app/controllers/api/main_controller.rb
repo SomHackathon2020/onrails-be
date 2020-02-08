@@ -20,6 +20,11 @@ class Api::MainController < ApplicationController
     render json: {:json => request.headers['HTTP_MINE_CART_NUMBER']}
   end
 
+  def user_friends
+    us = User.find_by(name: 'Eustaquio')
+    render us.levels_id
+    # render :json => us, :include => {:friends => {:only => [:name, :level]}}, :except => [:password, :salt]
+  end
   private
   def check
     if request.headers['HTTP_MINE_CART_NUMBER'] == 'hello'

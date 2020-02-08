@@ -3,5 +3,6 @@ Rails.application.routes.draw do
     get 'test/:id', to: 'main#test'
     get 'associations/:name/:email/:phone', to: 'main#new_association'
     get '/token', to: 'main#header_test'
+    get '/user/friends', to: 'main#user_friends'
   end
 end
