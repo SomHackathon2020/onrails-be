@@ -41,7 +41,7 @@ class Api::MainController < ApplicationController
   end
 
   def get_my_friends
-    us = User.find(token)
+    us = User.find_by_token(token)
     render :json => us, :include =>
         {
             :friends => {:only => [:name], :include => {:level => {:only => :name}}},
