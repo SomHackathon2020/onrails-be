@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
   has_many :achievements, through: :achievements_list
 
 
+  has_many :levels_id, foreign_key: :levels_id, class_name: 'Level'
+  has_many :level, through: :levels_id
 end
