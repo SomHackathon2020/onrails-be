@@ -16,13 +16,20 @@ class Api::MainController < ApplicationController
   end
 
   def header_test
-    render json: {:json => request.headers['HTTP_MINE_CART_NUMBER']}
+    render json: {:json => token}
   end
 
   def user_all
     render :json => User.all
   end
-
+  def my_user
+    user = User.find_by_token(token)
+    if user.nil?
+      render nothing: true, status: :unauthorized
+      return
+    end
+    render :json => user
+  end
   def get_user
     us = User.find(params[:user_id])
     render :json => us, :include =>
@@ -40,13 +47,16 @@ class Api::MainController < ApplicationController
   end
 
   private
+  def token
+    request.headers["HTTP_MINE_CART_NUMBER"]
+  end
 
   def check
     if request.headers['HTTP_MINE_CART_NUMBER'].nil?
       render :nothing => true, :status => 403
 
     else
-      if User.find_by_token(request.headers['HTTP_MINE_CART_NUMBER']).nil?
+      if User.find_by_token(token).nil?
         render :nothing => trust, :status => 401
       end
     end
