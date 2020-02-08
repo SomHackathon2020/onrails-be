@@ -20,7 +20,7 @@ class Api::MainController < ApplicationController
   end
 
   def user_all
-    render :json => User.all
+    render :json => User.all, :except =>[:password, :salt, :token]
   end
   def my_user
     user = User.find_by_token(token)
@@ -28,7 +28,7 @@ class Api::MainController < ApplicationController
       render nothing: true, status: :unauthorized
       return
     end
-    render :json => user
+    render :json => user, :except =>[:password, :salt, :token]
   end
   def get_user
     us = User.find(params[:user_id])
