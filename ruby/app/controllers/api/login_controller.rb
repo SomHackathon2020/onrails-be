@@ -4,7 +4,18 @@
 class Api::LoginController < ApplicationController
 
   def login
-    render json: {:working => true, params: params[:id], :env => ENV['RAILS_ENV'], :env2 => ENV['environment']}
+    uname = request.headers['HTTP_EMAIL']
+    pwd = request.headers['HTTP_PASSWORD']
+    user = User.find_by(email: uname, password: pwd)
+    if user.nil?
+      render :json => request.headers['HTTP_EMAIL'] , status: :unauthorized
+      return
+    end
+    loop do
+      uuid = SecureRandom.uuid
+      break if User.find_by(token: uuid).nil?
+    end
+    render json: user
   end
 
 end

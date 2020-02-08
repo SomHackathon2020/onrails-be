@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     get '/token', to: 'main#header_test'
     get '/user/all', to: 'main#user_all'
     get '/user/:user_id', to: 'main#user_friends'
+    post '/login', to: 'login#login'
   end
 end

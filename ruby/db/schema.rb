@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_08_151436) do
+ActiveRecord::Schema.define(version: 2020_02_08_200036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,19 +62,6 @@ ActiveRecord::Schema.define(version: 2020_02_08_151436) do
     t.text "description"
   end
 
-  create_table "other_users", force: :cascade do |t|
-    t.string "name"
-    t.string "password"
-    t.string "salt"
-    t.string "email"
-    t.string "phone"
-    t.date "birth"
-    t.decimal "actualxp"
-    t.text "picture"
-    t.bigint "levels_id"
-    t.index ["levels_id"], name: "index_other_users_on_levels_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password"
@@ -85,12 +72,12 @@ ActiveRecord::Schema.define(version: 2020_02_08_151436) do
     t.decimal "actualxp"
     t.text "picture"
     t.bigint "levels_id"
+    t.string "token"
     t.index ["levels_id"], name: "index_users_on_levels_id"
   end
 
   add_foreign_key "achievements", "categories", column: "categories_id"
   add_foreign_key "events", "associations", column: "associations_id"
   add_foreign_key "events", "categories", column: "categories_id"
-  add_foreign_key "other_users", "levels", column: "levels_id"
   add_foreign_key "users", "levels", column: "levels_id"
 end
