@@ -42,18 +42,17 @@ class Api::MainController < ApplicationController
 
   def get_my_friends
     us = User.find_by_token(token)
-    render :json => us, :include =>
+    render :json => us.friends, :include =>
         {
-            :friends => {:only => [:name], :include => {:level => {:only => :name}}},
-            :level => {:only => [:name, :description]}
+            :level => {:only => [:name, :description, :id]}
         }, :except => [:password, :salt, :token]
   end
+
   def get_user_friends
     us = User.find(params[:user_id])
-    render :json => us, :include =>
+    render :json => us.friends, :include =>
         {
-            :friends => {:only => [:name], :include => {:level => {:only => :name}}},
-            :level => {:only => [:name, :description]}
+            :level => {:only => [:name, :description, :id]}
         }, :except => [:password, :salt, :token]
   end
 
