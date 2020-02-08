@@ -1,7 +1,8 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: may66.ddns.net:5432
+  host: may66.ddns.net
+  port: 3001
   username: root
   password: adminadmin1234
   pool: 5
