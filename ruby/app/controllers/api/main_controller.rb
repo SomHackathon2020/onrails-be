@@ -20,20 +20,31 @@ class Api::MainController < ApplicationController
   end
 
   def user_all
-    render :json => User.all, :except =>[:password, :salt, :token]
+    render :json => User.all, :except => [:password, :salt, :token]
   end
+
   def my_user
     user = User.find_by_token(token)
     if user.nil?
       render nothing: true, status: :unauthorized
       return
     end
-    render :json => user, :except =>[:password, :salt, :token]
+    render :json => user, :except => [:password, :salt, :token]
   end
+
   def get_user
     us = User.find(params[:user_id])
     render :json => us, :include =>
         {
+            :level => {:only => [:name, :description]}
+        }, :except => [:password, :salt, :token]
+  end
+
+  def get_my_friends
+    us = User.find(token)
+    render :json => us, :include =>
+        {
+            :friends => {:only => [:name], :include => {:level => {:only => :name}}},
             :level => {:only => [:name, :description]}
         }, :except => [:password, :salt, :token]
   end
@@ -47,12 +58,13 @@ class Api::MainController < ApplicationController
   end
 
   private
+
   def token
     request.headers["HTTP_MINE_CART_NUMBER"]
   end
 
   def check
-    if request.headers['HTTP_MINE_CART_NUMBER'].nil?
+    if token.nil?
       render :nothing => true, :status => 403
 
     else
