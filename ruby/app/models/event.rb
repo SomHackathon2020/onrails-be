@@ -1,3 +1,3 @@
 class Event < ActiveRecord::Base
-  has_many :users, through:
+  # has_many :users, through:
 end

@@ -71,3 +71,4 @@ ruby/tmp/sockets/
 ruby/tmp/storage/
 ruby/config/local_env.yml
 .idea/
+.env.local

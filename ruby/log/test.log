@@ -1,0 +1,113 @@
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1235955690063948105)[0m
+  [1m[35m (9.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (7.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1235955690063948105)[0m
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1235955690063948105)[0m
+  [1m[35m (10.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (8.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(1235955690063948105)[0m
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1235955690063948105)[0m
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (8.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1235955690063948105)[0m
+  [1m[35m (10.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1235955690063948105)[0m
+  [1m[35m (9.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (7.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(1235955690063948105)[0m
+  [1m[35m (9.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1235955690063948105)[0m
+  [1m[35m (8.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (8.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(1235955690063948105)[0m
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1235955690063948105)[0m
+  [1m[35m (9.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAll (20200208143558)
+  [1m[35m (5.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.6ms)[0m  [1m[35mCREATE TABLE "alls" ("id" bigserial primary key)[0m
+  [1m[36mprimary::SchemaMigration Create (7.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200208143558"]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (8.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1235955690063948105)[0m
+  [1m[35m (11.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1235955690063948105)[0m
+  [1m[35m (9.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (8.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1235955690063948105)[0m
+  [1m[35m (9.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1235955690063948105)[0m
+  [1m[35m (9.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (7.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1235955690063948105)[0m
+  [1m[35m (10.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1235955690063948105)[0m
+  [1m[35m (8.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (7.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(1235955690063948105)[0m
+  [1m[35m (9.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1235955690063948105)[0m
+  [1m[35m (11.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (7.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(1235955690063948105)[0m
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (8.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1235955690063948105)[0m
+  [1m[35m (11.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (8.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (8.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1235955690063948105)[0m
+  [1m[35m (8.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1235955690063948105)[0m
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAllTest (20200208144626)
+  [1m[35m (5.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (27.6ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "color" character varying)[0m
+  [1m[35m (28.0ms)[0m  [1m[35mCREATE TABLE "achievements" ("id" bigserial primary key, "name" character varying, "xp" decimal, "categories_id" bigint, CONSTRAINT "fk_rails_5ebcb53bd1"
+FOREIGN KEY ("categories_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE  INDEX  "index_achievements_on_categories_id" ON "achievements"  ("categories_id")[0m
+  [1m[35m (21.7ms)[0m  [1m[35mCREATE TABLE "associations" ("id" bigserial primary key, "name" character varying, "email" character varying, "phone" character varying)[0m
+  [1m[35m (21.4ms)[0m  [1m[35mCREATE TABLE "levels" ("id" bigserial primary key, "name" character varying, "xpneeded" decimal, "description" text)[0m
+  [1m[35m (22.6ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying, "capacity" decimal, "description" text, "xp" decimal, "associations_id" bigint, "categories_id" bigint, CONSTRAINT "fk_rails_f8eb244854"
+FOREIGN KEY ("associations_id")
+  REFERENCES "associations" ("id")
+, CONSTRAINT "fk_rails_95bcc9f559"
+FOREIGN KEY ("categories_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE  INDEX  "index_events_on_associations_id" ON "events"  ("associations_id")[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE  INDEX  "index_events_on_categories_id" ON "events"  ("categories_id")[0m
+  [1m[35m (6.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (24.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "password" character varying, "salt" character varying, "email" character varying, "phone" character varying, "birth" date, "actualxp" decimal, "picture" text, "levels_id" bigint, "achievements_id" bigint, CONSTRAINT "fk_rails_fffade2646"
+FOREIGN KEY ("levels_id")
+  REFERENCES "levels" ("id")
+, CONSTRAINT "fk_rails_07bccd6573"
+FOREIGN KEY ("achievements_id")
+  REFERENCES "achievements" ("id")
+)[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_levels_id" ON "users"  ("levels_id")[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_achievements_id" ON "users"  ("achievements_id")[0m
+  [1m[35m (6.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "other_users" CASCADE[0m
+  [1m[35m (24.0ms)[0m  [1m[35mCREATE TABLE "other_users" ("id" bigserial primary key, "name" character varying, "password" character varying, "salt" character varying, "email" character varying, "phone" character varying, "birth" date, "actualxp" decimal, "picture" text, "levels_id" bigint, "achievements_id" bigint, CONSTRAINT "fk_rails_c88d4110b4"
+FOREIGN KEY ("levels_id")
+  REFERENCES "levels" ("id")
+, CONSTRAINT "fk_rails_27edbfbac8"
+FOREIGN KEY ("achievements_id")
+  REFERENCES "achievements" ("id")
+)[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE  INDEX  "index_other_users_on_levels_id" ON "other_users"  ("levels_id")[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE  INDEX  "index_other_users_on_achievements_id" ON "other_users"  ("achievements_id")[0m
+  [1m[35m (5.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships" CASCADE[0m
+  [1m[35m (16.6ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" bigserial primary key, "user_id" integer, "other_user_id" integer, "startedat" date)[0m
+  [1m[36mprimary::SchemaMigration Create (8.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200208144626"]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (7.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1235955690063948105)[0m
+  [1m[35m (10.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (297.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1235955690063948105)[0m
+  [1m[35m (466.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (52.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (14.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1235955690063948105)[0m
+  [1m[35m (50.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
