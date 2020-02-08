@@ -23,13 +23,20 @@ class Api::MainController < ApplicationController
     render :json => User.all
   end
 
-  def user_friends
+  def get_user
+    us = User.find(params[:user_id])
+    render :json => us, :include =>
+        {
+            :level => {:only => [:name, :description]}
+        }, :except => [:password, :salt, :token]
+  end
+  def get_user_friends
     us = User.find(params[:user_id])
     render :json => us, :include =>
         {
             :friends => {:only => [:name], :include => {:level => {:only => :name}}},
             :level => {:only => [:name, :description]}
-        }, :except => [:password, :salt]
+        }, :except => [:password, :salt, :token]
   end
 
   private
