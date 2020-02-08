@@ -11,8 +11,9 @@ services:
       - ./postgres/tmp/db:/var/lib/postgresql/data
       - ./postgres/entrypoint:/docker-entrypoint-initdb.d
     ports: 
-        - "5432:5432"
+        - "3001:5432"
   web:
+    container_name: ruby
     build: 
         context: ./ruby
     volumes:
