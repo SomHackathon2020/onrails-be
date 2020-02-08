@@ -56,7 +56,6 @@ build-iPhoneSimulator/
 # .rubocop-https?--*
 postgres/tmp/db/db-files
 ruby/.idea
-.gitignore
 *.iml
 .idea/.gitignore
 .idea/misc.xml
