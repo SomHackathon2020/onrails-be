@@ -2,6 +2,7 @@ version: '3'
 services:
   db:
     image: postgres
+    container_name: ruby_db
     environment:
         - POSTGRES_DB=rails
         - POSTGRES_USER=root
