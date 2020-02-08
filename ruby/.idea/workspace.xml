@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8498b4a-7330-40c4-a319-cf357d4542e1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="e8498b4a-7330-40c4-a319-cf357d4542e1" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +31,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
   </component>
   <component name="RunManager" selected="Rails.Development: ruby">
@@ -145,7 +144,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581152594076</updated>
-      <workItem from="1581152596251" duration="8313000" />
+      <workItem from="1581152596251" duration="8616000" />
     </task>
     <servers />
   </component>
@@ -160,10 +159,10 @@
       <screen x="0" y="0" width="1920" height="1008" />
     </state>
     <state x="560" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1008@0.0.1920.1008" timestamp="1581153017951" />
-    <state x="747" y="262" key="FileChooserDialogImpl" timestamp="1581158435721">
+    <state x="747" y="262" key="FileChooserDialogImpl" timestamp="1581165581214">
       <screen x="0" y="0" width="1920" height="1008" />
     </state>
-    <state x="747" y="262" key="FileChooserDialogImpl/0.0.1920.1008@0.0.1920.1008" timestamp="1581158435721" />
+    <state x="747" y="262" key="FileChooserDialogImpl/0.0.1920.1008@0.0.1920.1008" timestamp="1581165581214" />
     <state width="1874" height="250" key="GridCell.Tab.0.bottom" timestamp="1581157747579">
       <screen x="0" y="0" width="1920" height="1008" />
     </state>

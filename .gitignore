@@ -56,4 +56,17 @@ build-iPhoneSimulator/
 # .rubocop-https?--*
 postgres/tmp/db/db-files
 ruby/.idea
-ruby/.idea
+
+*.iml
+.idea/.gitignore
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+ruby/config/master.key
+ruby/log/development.log
+ruby/tmp/cache/
+ruby/tmp/development_secret.txt
+ruby/tmp/pids/
+ruby/tmp/restart.txt
+ruby/tmp/sockets/
+ruby/tmp/storage/
