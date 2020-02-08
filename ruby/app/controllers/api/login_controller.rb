@@ -21,6 +21,7 @@ class Api::LoginController < ApplicationController
   end
 
   def register
+
     if request.headers['HTTP_EMAIL'].nil? ||
         request.headers['HTTP_NAME'].nil? ||
         request.headers['HTTP_PASSWORD'].nil? ||
