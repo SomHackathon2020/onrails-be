@@ -11,12 +11,20 @@ class Api::LoginController < ApplicationController
       render :json => request.headers['HTTP_EMAIL'] , status: :unauthorized
       return
     end
+
     loop do
       uuid = SecureRandom.uuid
-      break if User.find_by(token: uuid).nil?
+      if User.find_by(token: uuid).nil?
+        user.token = uuid
+        user.save
+        break;
+      end
     end
     render json: user
   end
 
+  def signup
+
+  end
 end
 
