@@ -19,6 +19,11 @@ class Api::MainController < ApplicationController
     render json: {:json => token}
   end
 
+  def bounding_box
+    bbox = Geocoder::Calculations.bounding_box  params[:lat],  params[:lon],  params[:radius]
+    render :json => bbox
+  end
+
   def user_all
     render :json => User.all, :except => [:password, :salt, :token]
   end

@@ -44,18 +44,6 @@ class Update < ActiveRecord::Migration[6.0]
       t.references :levels, foreign_key: true
     end
 
-    create_table :other_users, force: :cascade do |t|
-      t.string :name
-      t.string :password
-      t.string :salt
-      t.string :email
-      t.string :phone
-      t.date :birth
-      t.numeric :actualxp
-      t.text :picture
-      t.references :levels, foreign_key: true
-    end
-
     create_table :friendships, force: :cascade do |t|
       t.integer "user_id"
       t.integer "other_user_id"
