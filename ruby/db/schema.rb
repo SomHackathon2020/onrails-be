@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_08_225749) do
+ActiveRecord::Schema.define(version: 2020_02_09_001717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_02_08_225749) do
     t.string "name"
     t.decimal "xp"
     t.bigint "categories_id"
+    t.string "picture"
     t.index ["categories_id"], name: "index_achievements_on_categories_id"
   end
 
@@ -39,6 +40,12 @@ ActiveRecord::Schema.define(version: 2020_02_08_225749) do
     t.string "color"
   end
 
+  create_table "event_assignations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "event_id"
+    t.date "joindate"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.decimal "capacity"
@@ -50,6 +57,9 @@ ActiveRecord::Schema.define(version: 2020_02_08_225749) do
     t.decimal "lat"
     t.string "address"
     t.string "picture"
+    t.decimal "price"
+    t.date "startdate"
+    t.date "enddate"
     t.index ["associations_id"], name: "index_events_on_associations_id"
     t.index ["categories_id"], name: "index_events_on_categories_id"
   end
@@ -57,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_02_08_225749) do
   create_table "friendships", force: :cascade do |t|
     t.integer "user_id"
     t.integer "other_user_id"
-    t.date "startedate"
+    t.date "date"
   end
 
   create_table "levels", force: :cascade do |t|
