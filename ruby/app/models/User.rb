@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :events_list, foreign_key: :event_id, class_name: 'EventAssignation'
   has_many :events, through: :events_list
 
-  has_many :achievements_list, foreign_key: :achievement_id, class_name: 'AchievementAssignation'
+  has_many :achievements_list, foreign_key: :user_id, class_name: 'AchievementAssignation'
   has_many :achievements, through: :achievements_list
 
   belongs_to :level, class_name: 'Level', foreign_key: 'levels_id'

@@ -36,7 +36,7 @@ class Api::MainController < ApplicationController
   end
   def user_achievements
     user = User.find_by_token(token)
-    render :json => Achievement.where(:users => user.id)
+    render :json => user.achievements
 
   end
   def user_all
