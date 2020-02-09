@@ -44,7 +44,7 @@ class Api::MainController < ApplicationController
     require 'open-uri'
     parameters = {:q => request.headers['HTTP_CITY'], :addressdetails => 0, :format => 'json'}
     query = 'a'
-    uri = URI.parse("https://nominatim.openstreetmap.org/").tap do |uri|
+    uri = URI.parse("http://may66.ddns.net:7070/").tap do |uri|
       uri.query = URI.encode_www_form parameters
     end
 
