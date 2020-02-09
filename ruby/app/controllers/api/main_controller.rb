@@ -20,6 +20,7 @@ class Api::MainController < ApplicationController
   end
 
   def get_events_by_distance
+    require 'open-uri'
     # v = params[:radius]
     # render :json => v.to_
     lon = request.headers['HTTP_LON']
@@ -32,7 +33,8 @@ class Api::MainController < ApplicationController
                  .where("lon between ? and ?", bbox[1], bbox[3])
     events.each do |ev|
       # ev.distance =  Geocoder::Calculations.distance_between [lat, lon], [ev.lat, ev.lon], :units => :km
-      uri = URI.parse "http://may66.ddns.net:5000/route/v1/bike/#{lon},#{lat};#{ev.lon},#{ev.lat}"
+      encoded_uri =URI.encode "http://may66.ddns.net:5000/route/v1/bike/#{lon},#{lat};#{ev.lon},#{ev.lat}"
+      uri = URI.parse encoded_uri
       j = JSON.parse uri.read
       ev.distance = j["routes"][0]["distance"]
       # render :json => a
