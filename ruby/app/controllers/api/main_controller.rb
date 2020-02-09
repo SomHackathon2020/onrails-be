@@ -20,8 +20,14 @@ class Api::MainController < ApplicationController
   end
 
   def bounding_box
-    bbox = Geocoder::Calculations.bounding_box  params[:lat],  params[:lon],  params[:radius]
-    render :json => bbox
+    # v = params[:radius]
+    # render :json => v.to_
+    bbox = Geocoder::Calculations.bounding_box [params[:lat], params[:lon]], params[:radius], :units => :km
+    # puts bbox
+    events = Event
+                 .where("lat between ? and ?", bbox[0], bbox[2])
+                 .where("lon between ? and ?", bbox[1], bbox[3])
+    render :json => {:ev => events,:bbox => bbox}
   end
 
   def user_all
