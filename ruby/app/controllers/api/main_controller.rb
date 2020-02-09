@@ -19,21 +19,27 @@ class Api::MainController < ApplicationController
     render json: {:json => token}
   end
 
-  def bounding_box
+  def get_events_by_distance
     # v = params[:radius]
     # render :json => v.to_
-    bbox = Geocoder::Calculations.bounding_box [params[:lat], params[:lon]], params[:radius], :units => :km
+    lon = request.headers['HTTP_LON']
+    lat = request.headers['HTTP_LAT']
+    radius = request.headers['HTTP_RADIUS']
+    bbox = Geocoder::Calculations.bounding_box [:lat, :lon], :radius, :units => :km
     # puts bbox
     events = Event
                  .where("lat between ? and ?", bbox[0], bbox[2])
                  .where("lon between ? and ?", bbox[1], bbox[3])
     events.each do |ev|
-      ev.distance =  Geocoder::Calculations.distance_between [params[:lat], params[:lon]], [ev.lat, ev.lon], :units => :km
-
+      ev.distance =  Geocoder::Calculations.distance_between [:lat, :lon], [ev.lat, ev.lon], :units => :km
     end
-
     render :json => events
   end
+
+  def reverse
+
+  end
+
   def user_achievements
     user = User.find_by_token(token)
     render :json => user.achievements

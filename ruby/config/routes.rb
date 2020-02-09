@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get '/user/achievements', to: 'main#user_achievements'
     get '/user/:user_id', to: 'main#get_user'
     get '/user/friends/:user_id', to: 'main#get_user_friends'
+    get '/event', to: 'main#get_events_by_distance'
     post '/login', to: 'login#login'
     post '/register', to: 'login#register'
   end
