@@ -25,19 +25,21 @@ class Api::MainController < ApplicationController
     lon = request.headers['HTTP_LON']
     lat = request.headers['HTTP_LAT']
     radius = request.headers['HTTP_RADIUS']
-    bbox = Geocoder::Calculations.bounding_box [:lat, :lon], :radius, :units => :km
+    bbox = Geocoder::Calculations.bounding_box([lat, lon], radius, :units => :km)
     # puts bbox
     events = Event
                  .where("lat between ? and ?", bbox[0], bbox[2])
                  .where("lon between ? and ?", bbox[1], bbox[3])
     events.each do |ev|
-      ev.distance =  Geocoder::Calculations.distance_between [:lat, :lon], [ev.lat, ev.lon], :units => :km
+      ev.distance =  Geocoder::Calculations.distance_between [lat, lon], [ev.lat, ev.lon], :units => :km
     end
     render :json => events
   end
 
   def reverse
 
+    # response = Net::HTTP.post_form('https://nominatim.openstreetmap.org/', {:q => })
+    # Net::HTTP::Get.new('https://nominatim.openstreetmap.org/?addressdetails=0&q=Tecnocampus mataro&format=json&limit=1')
   end
 
   def user_achievements
