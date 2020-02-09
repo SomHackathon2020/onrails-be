@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     get '/user/:user_id', to: 'main#get_user'
     get '/user/friends/:user_id', to: 'main#get_user_friends'
     get '/event', to: 'main#get_events_by_distance'
+    get '/reverse', to: 'main#reverse'
+
     post '/login', to: 'login#login'
     post '/register', to: 'login#register'
   end

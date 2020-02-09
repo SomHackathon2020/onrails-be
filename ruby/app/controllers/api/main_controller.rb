@@ -31,14 +31,28 @@ class Api::MainController < ApplicationController
                  .where("lat between ? and ?", bbox[0], bbox[2])
                  .where("lon between ? and ?", bbox[1], bbox[3])
     events.each do |ev|
-      ev.distance =  Geocoder::Calculations.distance_between [lat, lon], [ev.lat, ev.lon], :units => :km
+      # ev.distance =  Geocoder::Calculations.distance_between [lat, lon], [ev.lat, ev.lon], :units => :km
+      uri = URI.parse "http://may66.ddns.net:5000/route/v1/bike/#{lon},#{lat};#{ev.lon},#{ev.lat}"
+      j = JSON.parse uri.read
+      ev.distance = j["routes"][0]["distance"]
+      # render :json => a
     end
     render :json => events
   end
 
   def reverse
+    require 'open-uri'
+    parameters = {:q => request.headers['HTTP_CITY'], :addressdetails => 0, :format => 'json'}
+    query = 'a'
+    uri = URI.parse("https://nominatim.openstreetmap.org/").tap do |uri|
+      uri.query = URI.encode_www_form parameters
+    end
 
-    # response = Net::HTTP.post_form('https://nominatim.openstreetmap.org/', {:q => })
+
+    j = JSON.parse uri.read
+    j = j[0]
+
+    render :json => {:lat => j["lat"], :lon => j["lon"]}
     # Net::HTTP::Get.new('https://nominatim.openstreetmap.org/?addressdetails=0&q=Tecnocampus mataro&format=json&limit=1')
   end
 
