@@ -27,7 +27,12 @@ class Api::MainController < ApplicationController
     events = Event
                  .where("lat between ? and ?", bbox[0], bbox[2])
                  .where("lon between ? and ?", bbox[1], bbox[3])
-    render :json => {:ev => events,:bbox => bbox}
+    events.each do |ev|
+      ev.distance =  Geocoder::Calculations.distance_between [params[:lat], params[:lon]], [ev.lat, ev.lon], :units => :km
+
+    end
+
+    render :json => events
   end
 
   def user_all
