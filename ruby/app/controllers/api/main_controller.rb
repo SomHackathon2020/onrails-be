@@ -35,7 +35,9 @@ class Api::MainController < ApplicationController
     render :json => events
   end
   def user_achievements
-    render :json => User.find_by_token(token).achievements
+    user = User.find_by_token(token)
+    render :json => Achievement.where(:users => user.id)
+
   end
   def user_all
     render :json => User.all, :except => [:password, :salt, :token]
